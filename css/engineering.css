@@ -1,0 +1,251 @@
+/* ==========================================================================
+   ENGINEERING & INDUSTRIAL AUTOMATION VISUALS
+   Blueprints, Schematic Diagrams, Animated Signal Traces & Custom Cursor
+   ========================================================================== */
+
+/* Technical Blueprint Elements */
+.blueprint-panel {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+}
+
+.blueprint-panel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(rgba(17, 18, 21, 0.08) 1px, transparent 1px);
+  background-size: 16px 16px;
+  pointer-events: none;
+}
+
+/* Technical Corner Markings */
+.has-corner-marks {
+  position: relative;
+}
+
+.has-corner-marks::before,
+.has-corner-marks::after {
+  content: '+';
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--accent-orange);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.has-corner-marks::before {
+  top: 8px;
+  left: 8px;
+}
+
+.has-corner-marks::after {
+  bottom: 8px;
+  right: 8px;
+}
+
+/* Signal Flow Keyframes */
+@keyframes signalFlow {
+  from {
+    stroke-dashoffset: 40;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes signalPulse {
+  0% {
+    opacity: 0.3;
+    stroke-width: 1.5;
+  }
+  50% {
+    opacity: 1;
+    stroke-width: 2.5;
+  }
+  100% {
+    opacity: 0.3;
+    stroke-width: 1.5;
+  }
+}
+
+@keyframes dataPacketTravel {
+  0% {
+    offset-distance: 0%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
+/* SVG Line Classes */
+.signal-path-active {
+  stroke: var(--accent-orange);
+  stroke-dasharray: 6 4;
+  animation: signalFlow 1.2s linear infinite;
+}
+
+.signal-path-pulse {
+  stroke: var(--accent-orange);
+  animation: signalPulse 2s ease-in-out infinite;
+}
+
+.bus-trunk {
+  stroke: var(--text-main);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.component-node {
+  fill: #ffffff;
+  stroke: var(--text-main);
+  stroke-width: 1.5;
+  transition: all var(--transition-fast);
+}
+
+.component-node:hover {
+  fill: var(--accent-orange-subtle);
+  stroke: var(--accent-orange);
+}
+
+.node-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  fill: var(--text-main);
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.protocol-badge-text {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  font-weight: 700;
+  fill: var(--accent-orange);
+  text-anchor: middle;
+}
+
+/* ==========================================================================
+   HERO MICRO-ANIMATION SEQUENCE
+   1. KR logo appears
+   2. Technical grid fades in
+   3. Signal lines animate
+   4. KIRAN RAJEEV headline reveals
+   5. Engineering keywords appear
+   6. Buttons activate
+   ========================================================================== */
+.seq-hidden {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.seq-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay modifiers for the ~1s choreography */
+.seq-delay-1 { transition-delay: 0.1s; }
+.seq-delay-2 { transition-delay: 0.25s; }
+.seq-delay-3 { transition-delay: 0.45s; }
+.seq-delay-4 { transition-delay: 0.65s; }
+.seq-delay-5 { transition-delay: 0.85s; }
+
+/* ==========================================================================
+   DESKTOP CUSTOM CURSOR (Engineering Precision Pointer)
+   ========================================================================== */
+.custom-cursor-dot,
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.12s ease-out;
+}
+
+.custom-cursor-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-orange);
+}
+
+.custom-cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid var(--text-main);
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background-color 0.25s ease, transform 0.1s ease-out;
+}
+
+/* Hovering over project cards: Ring expands slightly */
+body.cursor-hover-project .custom-cursor-ring {
+  width: 54px;
+  height: 54px;
+  border-color: var(--accent-orange);
+  background-color: rgba(255, 85, 0, 0.04);
+}
+
+/* Hovering over buttons/links: Ring turns into small orange circle */
+body.cursor-hover-button .custom-cursor-ring {
+  width: 14px;
+  height: 14px;
+  border-color: var(--accent-orange);
+  background-color: var(--accent-orange);
+  opacity: 0.6;
+}
+
+body.cursor-hover-button .custom-cursor-dot {
+  opacity: 0;
+}
+
+/* Disable on touch screens and mobile */
+@media (pointer: coarse), (max-width: 992px) {
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   RESUME PREVIEW MODAL
+   ========================================================================== */
+.resume-modal-dialog {
+  max-width: 880px;
+  height: 90vh;
+}
+
+.resume-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #ffffff;
+}
+
+/* Circuit Trace Background Element for Education */
+.pcb-trace-decor {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 240px;
+  height: 100%;
+  opacity: 0.15;
+  pointer-events: none;
+}

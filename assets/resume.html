@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiran Rajeev - Resume | Electronics & Communication Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --color-text: #1a1a1a;
+      --color-muted: #555555;
+      --color-accent: #e64a19;
+      --color-border: #e0deda;
+      --color-bg: #fdfcf9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.5;
+      font-size: 13.5px;
+      padding: 30px 20px;
+    }
+
+    .resume-container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 40px 48px;
+      border: 1px solid var(--color-border);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #111;
+      padding-bottom: 18px;
+      margin-bottom: 20px;
+    }
+
+    .header-title h1 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      color: #111;
+    }
+
+    .header-title h2 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .contact-details {
+      text-align: right;
+      font-size: 12.5px;
+      color: var(--color-muted);
+      line-height: 1.6;
+    }
+
+    .contact-details a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact-details a:hover {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #111;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .item-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .item-subtitle {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-accent);
+    }
+
+    .item-meta {
+      font-size: 12px;
+      color: var(--color-muted);
+      font-family: var(--font-mono);
+    }
+
+    .item-desc {
+      color: #333;
+      margin-top: 4px;
+      font-size: 13px;
+    }
+
+    ul.bullets {
+      padding-left: 18px;
+      margin-top: 6px;
+      margin-bottom: 10px;
+    }
+
+    ul.bullets li {
+      margin-bottom: 4px;
+      font-size: 12.5px;
+      color: #333;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 5px;
+    }
+
+    .tag {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      background: #f3f0ea;
+      padding: 2px 7px;
+      border-radius: 3px;
+      color: #222;
+      border: 1px solid #e5e0d8;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 20px;
+      font-size: 12.5px;
+    }
+
+    .skill-category strong {
+      display: block;
+      font-size: 11.5px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #111;
+      margin-bottom: 2px;
+    }
+
+    .actions-bar {
+      max-width: 820px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: var(--color-accent);
+    }
+
+    .btn-secondary {
+      background: #eee;
+      color: #333;
+      border: 1px solid #ccc;
+    }
+
+    .btn-secondary:hover {
+      background: #ddd;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background: #fff;
+      }
+      .actions-bar {
+        display: none;
+      }
+      .resume-container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="actions-bar">
+    <a href="../index.html" class="btn btn-secondary">← Back to Portfolio</a>
+    <button onclick="window.print()" class="btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+        <rect x="6" y="14" width="12" height="8"></rect>
+      </svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <div class="resume-container">
+    <div class="header-bar">
+      <div class="header-title">
+        <h1>Kiran Rajeev</h1>
+        <h2>Electronics &amp; Communication Engineer</h2>
+      </div>
+      <div class="contact-details">
+        <div>Email: <a href="mailto:Kiranrjv002@gmail.com">Kiranrjv002@gmail.com</a></div>
+        <div>Location: Kerala, India</div>
+        <div>LinkedIn: <a href="https://linkedin.com/in/kiran-rajeev" target="_blank" rel="noopener">linkedin.com/in/kiran-rajeev</a></div>
+      </div>
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="section">
+      <div class="section-title">Professional Profile</div>
+      <p class="item-desc">
+        Electronics and Communication Engineering graduate with hands-on exposure to PLC, SCADA, HMI, industrial networking, DCS fundamentals, and industrial communication protocols through academic projects and technical training. Familiar with software testing concepts, Windows and Linux environments, and embedded systems fundamentals. Keen interest in Embedded Systems, Fiber Optic Technologies, and industrial automation, while continuously developing technical skills through dedicated learning and engineering practice.
+      </p>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section">
+      <div class="section-title">Experience</div>
+      <div class="item-header">
+        <div>
+          <span class="item-title">SMEC Automation</span>
+          <span class="item-subtitle"> — CRG Trainee Engineer</span>
+        </div>
+        <span class="item-meta">Nov 2025 — May 2026 | Cochin, India</span>
+      </div>
+      <ul class="bullets">
+        <li>Assisted in PLC, SCADA, and HMI development, configuration, and testing for industrial automation systems.</li>
+        <li>Performed system troubleshooting, validation, and functional testing during testing and commissioning activities.</li>
+        <li>Worked with industrial communication protocols including Modbus TCP and Ethernet-based communication.</li>
+        <li>Supported automation system configuration and troubleshooting across PLC, HMI, and SCADA environments.</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag">PLC</span>
+        <span class="tag">SCADA</span>
+        <span class="tag">HMI</span>
+        <span class="tag">Modbus TCP</span>
+        <span class="tag">Ethernet</span>
+        <span class="tag">Testing &amp; Commissioning</span>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+      <div class="section-title">Education</div>
+      <div class="item-header">
+        <div>
+          <span class="item-title">Government Engineering College, Palakkad</span>
+          <div class="item-subtitle">B.Tech in Electronics and Communication Engineering</div>
+        </div>
+        <span class="item-meta">2021 — 2025 | Palakkad, Kerala, India</span>
+      </div>
+      <div class="item-desc" style="margin-top: 4px;">
+        <strong>Academic Record:</strong> CGPA: <strong>8.6</strong> / 10.0
+      </div>
+    </div>
+
+    <!-- TECHNICAL SKILLS -->
+    <div class="section">
+      <div class="section-title">Technical Competencies</div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <strong>PLC Platforms</strong>
+          <span>Siemens, Allen-Bradley, Schneider, ABB, Mitsubishi, Delta, Omron</span>
+        </div>
+        <div class="skill-category">
+          <strong>SCADA &amp; HMI</strong>
+          <span>Wonderware InTouch, Citect SCADA, Vijeo Designer, Delta DOPSoft</span>
+        </div>
+        <div class="skill-category">
+          <strong>Industrial Communication</strong>
+          <span>Modbus TCP/IP, Modbus RTU, Ethernet/IP, ASCII, RS-232, DF1, Modbus Serial</span>
+        </div>
+        <div class="skill-category">
+          <strong>Automation Engineering</strong>
+          <span>Ladder Logic, PLC Programming, HMI Configuration, VFD Parameter Configuration, Testing &amp; Commissioning</span>
+        </div>
+        <div class="skill-category">
+          <strong>Programming &amp; Systems</strong>
+          <span>Python, C, Ladder Logic, Linux Basics</span>
+        </div>
+        <div class="skill-category">
+          <strong>Networking &amp; Hardware</strong>
+          <span>TCP/IP, IP Addressing, Ethernet Switches, Basic Network Troubleshooting</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SELECTED ENGINEERING PROJECTS -->
+    <div class="section">
+      <div class="section-title">Selected Engineering Projects</div>
+      
+      <div style="margin-bottom: 12px;">
+        <div class="item-header">
+          <span class="item-title">Metal Sorting Machine</span>
+          <span class="item-meta">Allen-Bradley MicroLogix 1400 PLC</span>
+        </div>
+        <p class="item-desc">Automated material detection and sorting system using PLC-based control.</p>
+        <ul class="bullets">
+          <li>Designed and implemented an automated metal sorting system using Allen-Bradley MicroLogix 1400 PLC.</li>
+          <li>Developed ladder logic for automated material detection and sorting operations.</li>
+          <li>Configured serial communication between PLC and external devices using RS-232 with DF1 protocol.</li>
+          <li>Integrated capacitive and proximity sensors to detect and differentiate metallic and non-metallic items.</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom: 12px;">
+        <div class="item-header">
+          <span class="item-title">Automatic Mains Failure (AMF) System</span>
+          <span class="item-meta">Allen-Bradley MicroLogix 1400 PLC &amp; Wonderware InTouch</span>
+        </div>
+        <p class="item-desc">Miniature automated mains/generator switching system.</p>
+        <ul class="bullets">
+          <li>Designed a miniature Automatic Mains Failure system using Allen-Bradley MicroLogix 1400 PLC.</li>
+          <li>Implemented relay logic and 24V DC switching for automated mains/generator control.</li>
+          <li>Used a bus coupler for load sharing and integrated control components for reliable switching.</li>
+          <li>Interfaced the system with Wonderware InTouch SCADA for real-time monitoring and data logging.</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom: 12px;">
+        <div class="item-header">
+          <span class="item-title">Batching Process Automation</span>
+          <span class="item-meta">Siemens S7-1200, TIA Portal &amp; WinCC Unified</span>
+        </div>
+        <ul class="bullets">
+          <li>Developed an automated batching process using Siemens S7-1200 DC/DC/DC PLC and ladder logic in TIA Portal.</li>
+          <li>Implemented weight-based batching of city water, QR and KM products into the main mixing tank according to predefined proportions.</li>
+          <li>Programmed 3-minute agitator operation after achieving the required batch proportion before transferring to filling lines.</li>
+          <li>Designed WinCC Unified HMI for real-time monitoring, process visualization, alarm indication, and data logging.</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom: 12px;">
+        <div class="item-header">
+          <span class="item-title">Controller-to-Controller Communication</span>
+          <span class="item-meta">Schneider M340 PAC &amp; Modicon M221 PLC</span>
+        </div>
+        <ul class="bullets">
+          <li>Configured communication between Schneider PAC M340 and Modicon M221 PLC using READ_VAR and WRITE_VAR function blocks.</li>
+          <li>Configured PAC M340 as the Master and Modicon M221 as the Slave controller over Modbus TCP/IP for controller-to-controller data exchange.</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom: 12px;">
+        <div class="item-header">
+          <span class="item-title">Smart Fuel System</span>
+          <span class="item-meta">IoT &amp; QR Payment</span>
+        </div>
+        <ul class="bullets">
+          <li>Developed an IoT-based smart fuel system enabling real-time communication between users and petrol pump operations.</li>
+          <li>Implemented QR-based payment interface to improve transaction transparency and reduce customer waiting time while enhancing dispensing security.</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom: 12px;">
+        <div class="item-header">
+          <span class="item-title">Image Denoising Using Machine Learning</span>
+          <span class="item-meta">Python, TensorFlow, PyTorch, OpenCV &amp; Django</span>
+        </div>
+        <ul class="bullets">
+          <li>Developed machine learning-based image denoising solutions for Gaussian, Salt &amp; Pepper, Speckle, and Uniform noise.</li>
+          <li>Built an end-to-end image denoising web application using Django and OpenCV with a CNN noise classification pipeline.</li>
+          <li>Implemented Patch-Based U-Net architecture achieving up to 16.61 dB PSNR improvement evaluated with SSIM, FSIM, and NPS.</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom: 8px;">
+        <div class="item-header">
+          <span class="item-title">Electronic Medicine Dispenser</span>
+          <span class="item-meta">ESP32, C/C++, Arduino IoT Cloud, Wi-Fi</span>
+        </div>
+        <ul class="bullets">
+          <li>Designed an automated medicine dispenser using ESP32 for scheduled dispensing of solid pills and liquid dosages.</li>
+          <li>Integrated Arduino IoT Cloud and Wi-Fi for remote medication monitoring, user alerts, and real-time telemetry.</li>
+          <li>Implemented compliance tracking using IR sensors and piezo buzzers; interfaced servo motors, water pump, and flow-rate sensor.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="section">
+      <div class="section-title">Certifications &amp; Professional Learning</div>
+      <ul class="bullets">
+        <li><strong>Professional Diploma in Industrial Automation (PDIA)</strong> — IPCS Global (PLC, SCADA, HMI, VFD, DCS)</li>
+        <li><strong>Computer Architecture</strong> — NPTEL (IIT Madras)</li>
+        <li><strong>Embedded Systems in EV</strong> — Techmaghi</li>
+        <li><strong>CSRBOX Placement Assistant Program</strong> — IBM SkillsBuild</li>
+      </ul>
+    </div>
+
+    <!-- LEADERSHIP -->
+    <div class="section" style="margin-bottom: 0;">
+      <div class="section-title">Leadership &amp; Volunteering</div>
+      <ul class="bullets">
+        <li><strong>Placement Coordinator</strong> — ECE Department, Government Engineering College, Palakkad</li>
+        <li><strong>Department Program Coordinator</strong> — ECE Department, Government Engineering College, Palakkad</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>

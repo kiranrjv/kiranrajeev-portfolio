@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <!-- Technical PCB Monogram for KR -->
+  <rect width="48" height="48" rx="8" fill="#111215"/>
+  <!-- Subtle grid lines -->
+  <line x1="12" y1="4" x2="12" y2="44" stroke="#25272E" stroke-width="1" stroke-dasharray="2 2"/>
+  <line x1="24" y1="4" x2="24" y2="44" stroke="#25272E" stroke-width="1" stroke-dasharray="2 2"/>
+  <line x1="36" y1="4" x2="36" y2="44" stroke="#25272E" stroke-width="1" stroke-dasharray="2 2"/>
+  <line x1="4" y1="12" x2="44" y2="12" stroke="#25272E" stroke-width="1" stroke-dasharray="2 2"/>
+  <line x1="4" y1="24" x2="44" y2="24" stroke="#25272E" stroke-width="1" stroke-dasharray="2 2"/>
+  <line x1="4" y1="36" x2="44" y2="36" stroke="#25272E" stroke-width="1" stroke-dasharray="2 2"/>
+
+  <!-- Trace K -->
+  <!-- Vertical backbone -->
+  <line x1="13" y1="12" x2="13" y2="36" stroke="#FBF9F5" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- K upper diagonal with 45 deg chamfer -->
+  <path d="M13 24 H17 L23 14" stroke="#FBF9F5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- K lower diagonal -->
+  <path d="M16 22 L23 34 H25" stroke="#FBF9F5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Connected Trace into R -->
+  <!-- Bridging trace line in Engineering Orange -->
+  <path d="M13 24 H28" stroke="#FF5500" stroke-width="2" stroke-linecap="round"/>
+  <!-- R vertical stem -->
+  <line x1="28" y1="12" x2="28" y2="36" stroke="#FF5500" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- R loop -->
+  <path d="M28 14 H34 C37 14 39 16 39 19 C39 22 37 24 34 24 H28" stroke="#FF5500" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- R leg with 45 deg turn -->
+  <path d="M32 24 L37 34 H39" stroke="#FF5500" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Solder Vias / Test Points -->
+  <circle cx="13" cy="12" r="2" fill="#111215" stroke="#FBF9F5" stroke-width="1.5"/>
+  <circle cx="13" cy="36" r="2" fill="#111215" stroke="#FBF9F5" stroke-width="1.5"/>
+  <circle cx="23" cy="14" r="2" fill="#111215" stroke="#FF5500" stroke-width="1.5"/>
+  <circle cx="39" cy="34" r="2" fill="#111215" stroke="#FF5500" stroke-width="1.5"/>
+</svg>
