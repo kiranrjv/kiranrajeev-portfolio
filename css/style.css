@@ -313,7 +313,7 @@ ul {
 }
 
 .site-header.scrolled {
-  height: var(--nav-height-compact);
+  height: var(--nav-height);
   background: rgba(251, 249, 245, 0.95);
   border-bottom-color: var(--border-subtle);
   box-shadow: 0 4px 20px rgba(17, 18, 21, 0.04);
