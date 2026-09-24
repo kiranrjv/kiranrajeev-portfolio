@@ -1982,3 +1982,32 @@ ul {
     scroll-behavior: auto !important;
   }
 }
+/* MOBILE MENU FIX */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex !important;
+        position: relative;
+        z-index: 2001;
+    }
+
+    .nav-menu {
+        position: fixed !important;
+        top: 72px !important;
+        left: 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        background: #FBF9F5 !important;
+        padding: 30px 24px !important;
+        gap: 20px !important;
+        z-index: 2000 !important;
+        transform: translateY(-120%) !important;
+        transition: transform 0.3s ease !important;
+        visibility: hidden;
+    }
+
+    .nav-menu.open {
+        transform: translateY(0) !important;
+        visibility: visible !important;
+    }
+}
