@@ -625,21 +625,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-// MOBILE MENU FIX
-document.addEventListener('DOMContentLoaded', function () {
-    const menuButton = document.getElementById('menuToggle');
-    const menu = document.getElementById('navMenu');
-
-    if (!menuButton || !menu) {
-        console.log('Mobile menu elements not found');
-        return;
-    }
-
-    menuButton.onclick = function () {
-        menu.classList.toggle('open');
-        menuButton.classList.toggle('active');
-
-        const opened = menu.classList.contains('open');
-        menuButton.setAttribute('aria-expanded', opened ? 'true' : 'false');
-    };
-});
