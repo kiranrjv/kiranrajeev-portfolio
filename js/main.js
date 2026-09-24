@@ -3,6 +3,7 @@
  * Orchestrates Hero Micro-Animations, Sticky Nav, Timeline Signal Flow,
  * Project Filters, Technical Case Study Modals, and Resume Viewer.
  */
+//Mobile navigation enabled
 
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
