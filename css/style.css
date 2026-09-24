@@ -406,12 +406,14 @@ ul {
   transition: width var(--transition-fast);
 }
 
-.nav-link:hover,
+.nav-link {
+  color: var(--text-secondary);
+}
+
 .nav-link.active {
   color: var(--accent-orange);
 }
 
-.nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
 }
