@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const timelineContainer = document.querySelector('.timeline-container');
   const timelineBusActive = document.querySelector('.timeline-bus-active');
 
+  let suppressScrollSpyUntil = 0;
+
   function handleScroll() {
     const scrollY = window.pageYOffset;
 
@@ -45,7 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
       header.classList.remove('scrolled');
     }
 
-    // Active link highlighting
+    // Active link highlighting — skipped while a clicked link's smooth
+    // scroll is still animating, so sections it passes through on the
+    // way don't briefly flash "active" before the target section arrives.
+    if (Date.now() < suppressScrollSpyUntil) {
+      updateTimelineBus();
+      return;
+    }
+
     let currentId = '';
     sections.forEach((sec) => {
       const top = sec.offsetTop - 120;
@@ -86,6 +95,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Lock the clicked link in as "active" right away, and hold it there
+  // until the smooth scroll to that section has finished.
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.forEach((l) => l.classList.remove('active'));
+      link.classList.add('active');
+      suppressScrollSpyUntil = Date.now() + 900;
+    });
+  });
 
   // ==========================================================================
   // 3. VERTICAL TIMELINE SIGNAL LINE TRACKING
