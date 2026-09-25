@@ -27,6 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
 
+  // Declared here (before handleScroll's first call below) because
+  // updateTimelineBus() references these — having them declared further
+  // down the file threw a ReferenceError on page load and silently
+  // stopped every script below it from running, including the mobile
+  // menu toggle.
+  const timelineContainer = document.querySelector('.timeline-container');
+  const timelineBusActive = document.querySelector('.timeline-bus-active');
+
   function handleScroll() {
     const scrollY = window.pageYOffset;
 
@@ -82,9 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
   // 3. VERTICAL TIMELINE SIGNAL LINE TRACKING
   // ==========================================================================
-  const timelineContainer = document.querySelector('.timeline-container');
-  const timelineBusActive = document.querySelector('.timeline-bus-active');
-
   function updateTimelineBus() {
     if (!timelineContainer || !timelineBusActive) return;
 
