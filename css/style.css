@@ -1914,6 +1914,26 @@ ul {
     display: flex;
   }
 
+  /* The subtitle + full-width CTA button were wrapping onto extra lines
+     and overflowing the fixed-height header, which visually buried the
+     hamburger button and its dropdown underneath the spilled-over text. */
+  .brand-role {
+    display: none;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .nav-actions .btn.btn-primary.btn-sm {
+    display: none;
+  }
+
+  .nav-actions {
+    gap: 10px;
+  }
+
   .nav-menu {
     position: fixed;
     top: var(--nav-height);
